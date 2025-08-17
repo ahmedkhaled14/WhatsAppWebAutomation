@@ -94,8 +94,8 @@ This framework covers a range of essential WhatsApp Web functionalities, organiz
 5.  **Set Browser Language to English:**
     The `DriverFactory.initializeDriver()` also includes:
     ```java
-    options.addArguments("--lang=en");
-    options.addArguments("--accept-lang=en-US,en");
+    //options.addArguments("--lang=en");
+    //options.addArguments("--accept-lang=en-US,en");
     ```
     > **Why these language arguments?**
     > These arguments are crucial for ensuring the WhatsApp Web interface always loads in English. Without them, if your system's default language is Arabic (or any other language), WhatsApp Web might automatically detect and display the interface in that language. This can cause issues for the automation script, as element locators (like text on buttons) might change. Forcing the language to English provides a consistent and predictable environment for the automation.

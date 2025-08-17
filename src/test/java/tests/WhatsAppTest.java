@@ -66,7 +66,7 @@ public class WhatsAppTest {
     @Story("Send a media file")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Given I am chatting with a contact\nWhen I upload and send an image\nThen the image should be sent successfully")
-    public void testWhatsAppUploadImage() throws AWTException, InterruptedException {
+    public void testWhatsAppUploadImage() throws AWTException {
         new HomePage(driver)
                 .navigateToHomePage()
                 .searchForContactByName(testData.getTestData("contactName"))

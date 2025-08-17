@@ -78,4 +78,12 @@ public class ElementActions {
                 .perform();
     }
 
+    public static void staticWait(int waitTime) {
+        try {
+            Thread.sleep(waitTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

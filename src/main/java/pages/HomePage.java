@@ -51,11 +51,7 @@ public class HomePage {
     @Step("Send message: {message}")
     public HomePage sendMessage(String message) {
         type(driver, messageInputLocator, message + generateCurrentDateAndTime() + Keys.ENTER);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        staticWait(3000);
         return this;
     }
 
@@ -80,23 +76,17 @@ public class HomePage {
     @Step("Click on send button")
     public HomePage clickOnSendButton() {
         click(driver, sendButtonLocator);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        staticWait(3000);
         return this;
     }
 
     @Step("Upload image from path: {imagePath}")
-    public HomePage uploadImage(String imagePath) throws AWTException, InterruptedException {
+    public HomePage uploadImage(String imagePath) throws AWTException {
         click(driver, plusIconLocator);
         click(driver, mediaIconLocator);
-
         StringSelection filePath = new StringSelection(imagePath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath, null);
-
-        Thread.sleep(1000);
+        staticWait(1000);
         Robot rb = new Robot();
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);
@@ -104,9 +94,9 @@ public class HomePage {
         rb.keyRelease(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(1000);
+        staticWait(1000);
         pressEnter(driver);
-        Thread.sleep(3000);
+        staticWait(3000);
         return this;
     }
 }

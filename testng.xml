@@ -13,6 +13,7 @@
                     <include name="testWhatsAppSearch"/>
                     <include name="testWhatsAppSendMessageChat"/>
                     <include name="testWhatsAppSendEmojiChat"/>
+                    <include name="testWhatsAppUploadImage"/>
                 </methods>
             </class>
         </classes>
